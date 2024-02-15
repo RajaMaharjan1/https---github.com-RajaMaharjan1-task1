@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+
+    <!-- Link to your external CSS file -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <br>
+        <br>
+        <img src= "	https://www.coventry.ac.uk/globalassets/media/global/00-clearing-2023/icons/logo.svg"
+        width="350" height="70" 
+        alt="logo" 
+        > 
+    <h1>Search Results</h1>
+    {% if results %}
+    <p className="text-align:left">Total result found {{ results|length }}  : <span>'{{ query }}'</span></p>
+    <ul>
+        {% for result in results %}
+        <li>
+            <strong>ID:</strong> {{ loop.index }}<br>
+            <strong>Title:</strong> <a href="{{ result['publication_url'] }}" target="_blank">{{ result['title'] }}</a><br>
+            <strong>Authors:</strong> {{ result['authors'] }}<br>
+            <strong>Year:</strong> {{ result['year'] }}<br>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No results found for '{{ query }}'.</p>
+    {% endif %}
+    <button onclick="goHome()">Back To Search </button>
+    </div>
+    <footer> Name: Raja Maharjan, College id: 160397, Coventry id: 14825206</footer>
+</body>
+    <script>
+        function goHome() {
+            window.location.href = "/";
+        }
+    </script>
+
+</html>

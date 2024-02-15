@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centre for Health and Life Sciences</title>
+    <style>
+        
+        body {
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+
+        h1 {
+            color: #020202;
+        }
+
+         label {
+            font-size: 25px;
+            color: #0a0a0a;
+            display: block;
+            margin-bottom: 10px;
+        }
+        button {
+            font-size: 20px;
+            color: #241515;
+            background-color:rgb(231, 238, 234);
+        }
+        button:hover {
+            background-color: #0056b3;
+            color: rgb(245, 245, 245); /* Change color on hover */
+        }
+
+        form {
+            text-align: center;
+
+        }
+
+        input {
+            width: 40%;
+            height: 25px;
+            /* Make the input take up the full width */
+        }
+    </style>
+</head>
+
+<body>
+    <br>
+   
+    <form action="/search" method="post" className="center">
+    
+        <img src= "	https://www.coventry.ac.uk/globalassets/media/global/00-clearing-2023/icons/logo.svg"
+                width="420" height="100" 
+                alt="logo" 
+                > 
+                
+        <h1>Coventry University Scholar </h1>
+        
+        <input type="text" placeholder="Enter name of paper/book" id="query" name="query" required>
+        <br>
+        <br>
+        <button type="submit">Search</button>
+    </form>
+</body>
+
+
+</html>
+
+
+
+
+
